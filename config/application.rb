@@ -43,7 +43,7 @@ module HangPanBackend
 
         resource '*',
                  headers: :any,
-                 methods: :get
+                 methods: %i[get post]
       end
     end
   end
