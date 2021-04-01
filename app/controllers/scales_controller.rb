@@ -1,7 +1,7 @@
 class ScalesController < ApplicationController
     before_action :set_scale, only: :show
     def index
-        @scales = Scale.all
+        @scales = Scale.all.alphabetical
         render json: @scales
     end
 
@@ -11,15 +11,18 @@ class ScalesController < ApplicationController
     end
     
     def create
-        new_scale = Scale.create(scale_params)
-        ["0", "1", "2", "3", "4", "5", "6", "7", "8"].each_with_index do |note, index|
-            new_scale.scale_notes.create(note_id: params[note], position: index + 1)
-        end
+        new_scale = Scale.new(scale_params)
         if new_scale.save
+            ["0", "1", "2", "3", "4", "5", "6", "7", "8"].each_with_index do |note, index|
+                new_scale.scale_notes.create(note_id: params[note], position: index + 1)
+            end
             render json: new_scale
+        else
+            puts 'fails'
+            render json: {status: 400, message: new_scale.errors.full_messages[0]}, status: 400
         end
     end
-    
+
     private
         def set_scale
             @scale = Scale.find_by(id: params[:id])
