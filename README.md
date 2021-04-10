@@ -7,7 +7,7 @@ Built with
 -Ruby 2.7.2
 -Rails 6.1.3 
 
-#Installation Instructions:
+## Installation Instructions:
 
 Fork and download this repo, and run the following commands to seed the database:
 ```
