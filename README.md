@@ -10,15 +10,20 @@ Built with
 #Installation Instructions:
 
 Fork and download this repo, and run the following commands to seed the database:
-
-`>rake db:migrate
-
-`>rake db:seed
+```
+>rake db:migrate
+```
+```
+>rake db:seed
+```
 
 View the saved notes and scales in the rails console using:
-
-`>rails c
-
-`>Note.all
-
-`>Scale.all
+```
+>rails c
+```
+```
+>Note.all
+```
+```
+>Scale.all
+```
