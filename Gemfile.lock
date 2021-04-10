@@ -73,6 +73,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    language_filter (0.3.01)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -91,6 +92,7 @@ GEM
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    obscenity (1.0.2)
     pg (1.2.3)
     puma (5.2.2)
       nio4r (~> 2.0)
@@ -154,7 +156,9 @@ DEPENDENCIES
   awesome_print
   bootsnap (>= 1.4.4)
   byebug
+  language_filter
   listen (~> 3.3)
+  obscenity
   pg
   puma (~> 5.0)
   rack-cors
